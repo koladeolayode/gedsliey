@@ -1,13 +1,14 @@
 import type { Metadata } from 'next'
 import Container from '@/components/ui/Container'
-import Button from '@/components/ui/Button'
 import ConsultationCTA from '@/components/sections/ConsultationCTA'
+import { generatePageMetadata } from '@/lib/seo/metadata'
 
-export const metadata: Metadata = {
+export const metadata: Metadata = generatePageMetadata({
   title: 'About',
+  path: '/about',
   description:
     'Gedsliey Inc. is a specialized research and technical consulting firm focused on materials, chemicals, bridge bearings and engineering R&D.',
-}
+})
 
 export default function AboutPage() {
   return (
@@ -87,11 +88,11 @@ export default function AboutPage() {
             <h2 className="font-display text-3xl font-bold leading-tight mb-8 sm:text-5xl">
               Asking the Unasked.
             </h2>
-            <p className="text-gray-300 leading-relaxed mb-6 text-lg">
+            <p className="text-off-white/80 leading-relaxed mb-6 text-lg">
               Complex engineering problems rarely fail because of the obvious reason. They fail
               because of hidden assumptions, unconsidered variables, and overlooked interactions.
             </p>
-            <p className="text-gray-400 leading-relaxed">
+            <p className="text-off-white/60 leading-relaxed">
               Gedsliey was built on the conviction that reliable technical decisions require
               asking better questions — not just answering the convenient ones.
             </p>

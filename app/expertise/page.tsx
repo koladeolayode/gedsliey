@@ -30,11 +30,11 @@ export default function ExpertisePage() {
             {SERVICES.map((service, i) => (
               <div
                 key={service.slug}
-                className={`grid gap-0 border border-gray-100 lg:grid-cols-2${
+                className={`grid gap-0 border border-brand-gray/15 lg:grid-cols-2${
                   i > 0 ? ' border-t-0' : ''
                 }`}
               >
-                <div className="p-10 border-b lg:border-b-0 lg:border-r border-gray-100 lg:p-16">
+                <div className="p-10 border-b lg:border-b-0 lg:border-r border-brand-gray/15 lg:p-16">
                   <span className="font-display text-4xl font-bold text-brand-brown/20 mb-6 block">
                     {service.index}
                   </span>

@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" fill="none">
+  <rect width="1200" height="630" fill="#F7F7F5"/>
+  <g stroke="#6E6A67" stroke-opacity="0.15" stroke-width="1">
+    <line x1="0" y1="157" x2="1200" y2="157"/>
+    <line x1="0" y1="472" x2="1200" y2="472"/>
+    <line x1="800" y1="0" x2="800" y2="630"/>
+  </g>
+  <circle cx="960" cy="315" r="120" stroke="#4A382E" stroke-opacity="0.2" stroke-width="2" fill="none"/>
+  <circle cx="960" cy="315" r="8" fill="#4A382E"/>
+  <text x="90" y="150" font-family="'Plus Jakarta Sans', sans-serif" font-size="28" letter-spacing="6" fill="#4A382E" font-weight="600">GEDSLIEY INC.</text>
+  <text x="86" y="320" font-family="'Plus Jakarta Sans', sans-serif" font-size="96" fill="#171717" font-weight="700">ASKING THE</text>
+  <text x="86" y="420" font-family="'Plus Jakarta Sans', sans-serif" font-size="96" fill="#171717" font-weight="700">UNASKED.</text>
+  <text x="90" y="510" font-family="Inter, sans-serif" font-size="30" fill="#6E6A67">Independent technical thinking.</text>
+</svg>

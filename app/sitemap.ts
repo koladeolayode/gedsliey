@@ -1,7 +1,8 @@
 import type { MetadataRoute } from 'next'
 import { getArticles } from '@/lib/content/articles'
+import { getSiteUrl } from '@/lib/seo/metadata'
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://gedsliey.com'
+const siteUrl = getSiteUrl()
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const articles = getArticles()

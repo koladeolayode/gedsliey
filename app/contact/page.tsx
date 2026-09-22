@@ -1,12 +1,14 @@
 import type { Metadata } from 'next'
 import Container from '@/components/ui/Container'
 import ContactForm from '@/components/forms/ContactForm'
+import { generatePageMetadata } from '@/lib/seo/metadata'
 
-export const metadata: Metadata = {
+export const metadata: Metadata = generatePageMetadata({
   title: 'Contact',
+  path: '/contact',
   description:
     'Contact Gedsliey Inc. to discuss a technical challenge, enquire about our services, or ask a technical question.',
-}
+})
 
 export default function ContactPage() {
   return (

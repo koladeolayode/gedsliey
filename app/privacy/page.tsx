@@ -1,17 +1,20 @@
 import type { Metadata } from 'next'
 import Container from '@/components/ui/Container'
+import { generatePageMetadata } from '@/lib/seo/metadata'
 
-export const metadata: Metadata = {
+export const metadata: Metadata = generatePageMetadata({
   title: 'Privacy Policy',
+  path: '/privacy',
   description: 'Privacy Policy for Gedsliey Inc.',
-}
+  noIndex: true,
+})
 
 export default function PrivacyPage() {
   return (
     <section className="bg-white pt-24 pb-24 md:pt-32">
       <Container as="div">
         <div className="max-w-3xl">
-          <div className="border border-yellow-200 bg-yellow-50 p-4 mb-12 text-sm text-yellow-800">
+          <div className="border-l-2 border-brand-brown bg-brand-brown/5 p-4 mb-12 text-sm text-brand-brown">
             [CLIENT / LEGAL REVIEW REQUIRED — This is a draft placeholder only and does not
             constitute legal advice. This page must be reviewed and approved by qualified legal
             counsel before publication.]

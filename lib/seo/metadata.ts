@@ -5,7 +5,8 @@ const DEFAULT_DESCRIPTION =
   'Independent technical thinking. Specialized research and consulting in materials, chemicals, bridge bearings, and R&D — asking the unasked questions.'
 
 export function getSiteUrl(): string {
-  return process.env.NEXT_PUBLIC_SITE_URL ?? 'https://gedsliey.com'
+  const url = process.env.NEXT_PUBLIC_SITE_URL
+  return url && url.trim().length > 0 ? url.trim() : 'https://gedsliey.com'
 }
 
 interface PageMetadataInput {

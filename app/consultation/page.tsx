@@ -1,12 +1,14 @@
 import type { Metadata } from 'next'
 import Container from '@/components/ui/Container'
 import Button from '@/components/ui/Button'
+import { generatePageMetadata } from '@/lib/seo/metadata'
 
-export const metadata: Metadata = {
+export const metadata: Metadata = generatePageMetadata({
   title: 'Book a Consultation',
+  path: '/consultation',
   description:
     'Book a technical consultation with Gedsliey Inc. Discuss your engineering challenge with a PhD-qualified specialist.',
-}
+})
 
 const bookingUrl = process.env.NEXT_PUBLIC_BOOKING_URL
 
@@ -99,14 +101,14 @@ export default function ConsultationPage() {
                     Book Now
                   </Button>
                 ) : (
-                  <div className="border border-dashed border-gray-200 p-6 text-center">
+                  <div className="border border-dashed border-brand-gray/40 p-6 text-center">
                     <p className="text-brand-gray text-sm">
                       [BOOKING LINK TO BE PROVIDED]
                     </p>
                   </div>
                 )}
               </div>
-              <div className="border border-gray-100 p-10">
+              <div className="border border-brand-gray/15 p-10">
                 <p className="font-display font-semibold text-near-black mb-3">
                   Prefer to write first?
                 </p>

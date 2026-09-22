@@ -22,14 +22,17 @@ function checkRateLimit(ip: string): boolean {
 export async function POST(req: NextRequest) {
   const ip = req.headers.get('x-forwarded-for') ?? req.headers.get('x-real-ip') ?? 'unknown'
   if (!checkRateLimit(ip)) {
-    return NextResponse.json({ error: 'Too many requests' }, { status: 429 })
+    return NextResponse.json(
+      { message: 'Too many requests. Please try again shortly.' },
+      { status: 429 },
+    )
   }
 
   let body: unknown
   try {
     body = await req.json()
   } catch {
-    return NextResponse.json({ error: 'Invalid JSON' }, { status: 400 })
+    return NextResponse.json({ message: 'Invalid request.' }, { status: 400 })
   }
 
   const parsed = contactSchema.safeParse(body)
@@ -39,19 +42,26 @@ export async function POST(req: NextRequest) {
       const key = issue.path[0]?.toString()
       if (key && !errors[key]) errors[key] = issue.message
     }
-    return NextResponse.json({ errors }, { status: 422 })
+    return NextResponse.json(
+      { message: 'Please check the highlighted fields.', errors },
+      { status: 422 },
+    )
   }
 
   const { website, ...data } = parsed.data
 
-  // Honeypot check
+  // Honeypot: silently succeed for bots so they get no signal.
   if (website) {
-    // Silently succeed for bots
     return NextResponse.json({ success: true })
   }
 
-  // Forward to n8n webhook (non-blocking failure)
-  await sendContactToN8n(data)
+  const result = await sendContactToN8n(data)
+  if (!result.ok) {
+    return NextResponse.json(
+      { message: 'We could not submit your enquiry right now. Please try again.' },
+      { status: 502 },
+    )
+  }
 
   return NextResponse.json({ success: true })
 }
