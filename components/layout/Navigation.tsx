@@ -33,11 +33,15 @@ const EXPERTISE_LINKS = [
 
 function Logo() {
   return (
-    <Link href="/" className="flex items-baseline gap-1" aria-label="Gedsliey Inc. home">
-      <span className="font-display text-xl font-bold tracking-tight text-near-black">
+    <Link
+      href="/"
+      aria-label="Gedsliey Inc. home"
+      className="group relative flex items-baseline gap-1 rounded-sm px-3 py-1.5 transition-all duration-300 hover:scale-110 hover:bg-white/60 hover:shadow-[0_2px_16px_rgba(74,56,46,0.10)] hover:backdrop-blur-md hover:border hover:border-gray-200/80"
+    >
+      <span className="font-display text-xl font-bold tracking-tight text-near-black transition-colors duration-300 group-hover:text-brand-brown">
         GEDSLIEY
       </span>
-      <span className="font-display text-xs font-semibold tracking-[0.2em] text-brand-gray">
+      <span className="font-display text-xs font-semibold tracking-[0.2em] text-brand-gray transition-colors duration-300 group-hover:text-brand-brown/60">
         INC.
       </span>
     </Link>
