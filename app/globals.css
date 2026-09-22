@@ -66,3 +66,50 @@ a {
     linear-gradient(to bottom, rgba(110, 106, 103, 0.09) 1px, transparent 1px);
   background-size: 48px 48px;
 }
+
+/* Liquid glass effect — logo hover */
+.liquid-glass {
+  position: relative;
+  background: rgba(255, 255, 255, 0.18);
+  backdrop-filter: blur(14px) saturate(200%) brightness(1.06);
+  -webkit-backdrop-filter: blur(14px) saturate(200%) brightness(1.06);
+  border: 1px solid rgba(255, 255, 255, 0.55);
+  box-shadow:
+    0 2px 20px rgba(74, 56, 46, 0.10),
+    0 1px 4px rgba(74, 56, 46, 0.06),
+    inset 0 1.5px 0 rgba(255, 255, 255, 0.75),
+    inset 0 -1px 0 rgba(74, 56, 46, 0.06);
+  overflow: hidden;
+}
+
+/* Specular highlight — top-left light streak */
+.liquid-glass::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.55) 0%,
+    rgba(255, 255, 255, 0.12) 40%,
+    rgba(255, 255, 255, 0) 65%
+  );
+  pointer-events: none;
+  border-radius: inherit;
+}
+
+/* Subtle bottom-edge refraction */
+.liquid-glass::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 10%;
+  right: 10%;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.6) 50%,
+    transparent
+  );
+  pointer-events: none;
+}
