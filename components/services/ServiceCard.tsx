@@ -16,9 +16,10 @@ export default function ServiceCard({
   return (
     <Link
       href={href}
-      className="group flex flex-col border-t border-brand-gray/25 pt-6 transition-colors hover:border-brand-brown"
+      className="group flex flex-col bg-white p-8 transition-colors hover:bg-gray-50"
     >
-      <span className="font-display text-sm font-semibold text-brand-brown">{index}</span>
+      <span className="font-display text-sm font-semibold text-brand-gray">{index}</span>
+      <div className="mt-4 h-px w-8 bg-brand-brown transition-all group-hover:w-16" aria-hidden="true" />
       <h3 className="mt-4 font-display text-2xl font-semibold leading-tight text-near-black">
         {title}
       </h3>

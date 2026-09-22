@@ -21,6 +21,9 @@ const config: Config = {
         "brand-blue": "#315A7D",
         "off-white": "#F7F7F5",
         "near-black": "#171717",
+        "gray-50": "#F2F0EE",
+        "gray-100": "#E8E5E2",
+        "gray-200": "#D0CBC7",
       },
       fontFamily: {
         display: ["var(--font-display)", "Plus Jakarta Sans", "sans-serif"],

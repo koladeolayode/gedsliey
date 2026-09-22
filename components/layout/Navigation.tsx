@@ -34,7 +34,7 @@ export default function Navigation() {
   const bookingUrl = process.env.NEXT_PUBLIC_BOOKING_URL || '/consultation'
 
   return (
-    <header className="sticky top-0 z-50 border-b border-brand-gray/15 bg-off-white/90 backdrop-blur">
+    <header className="sticky top-0 z-50 border-b border-gray-200 bg-gray-50/95 backdrop-blur">
       <Container as="div" className="flex h-16 items-center justify-between">
         <Logo />
 
@@ -101,7 +101,7 @@ export default function Navigation() {
             animate={{ height: 'auto', opacity: 1 }}
             exit={reduce ? { opacity: 0 } : { height: 0, opacity: 0 }}
             transition={{ duration: reduce ? 0 : 0.25 }}
-            className="overflow-hidden border-t border-brand-gray/15 bg-off-white md:hidden"
+            className="overflow-hidden border-t border-gray-200 bg-gray-50 md:hidden"
           >
             <Container as="div" className="flex flex-col gap-1 py-4">
               {NAV_LINKS.map((link) => (

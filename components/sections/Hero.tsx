@@ -14,11 +14,11 @@ export default function Hero() {
   })
 
   return (
-    <section className="relative overflow-hidden bg-off-white tech-grid">
+    <section className="relative overflow-hidden bg-gray-50 tech-grid">
       {/* Inline technical line pattern */}
       <svg
         aria-hidden="true"
-        className="pointer-events-none absolute right-0 top-0 h-full w-1/2 text-brand-gray/20"
+        className="pointer-events-none absolute right-0 top-0 h-full w-1/2 text-brand-gray/35"
         preserveAspectRatio="xMaxYMid slice"
         viewBox="0 0 400 400"
         fill="none"

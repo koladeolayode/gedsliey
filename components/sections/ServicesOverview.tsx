@@ -15,7 +15,7 @@ export default function ServicesOverview() {
           </h2>
         </div>
 
-        <div className="mt-16 grid gap-12 md:grid-cols-3">
+        <div className="mt-16 grid gap-0 divide-x divide-gray-200 border border-gray-200 md:grid-cols-3">
           {SERVICES.map((service) => (
             <ServiceCard
               key={service.slug}

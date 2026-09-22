@@ -30,7 +30,7 @@ export default function WhyGedsliey() {
   const reduce = useReducedMotion()
 
   return (
-    <section className="bg-white py-24 md:py-32">
+    <section className="bg-gray-50 py-24 md:py-32">
       <Container as="div">
         <div className="grid items-start gap-16 lg:grid-cols-[0.8fr_1.2fr]">
           <div>
@@ -46,7 +46,7 @@ export default function WhyGedsliey() {
             </p>
           </div>
 
-          <ol className="space-y-0">
+          <ol className="space-y-2">
             {CREDENTIALS.map((item, i) => (
               <motion.li
                 key={item.label}
@@ -54,7 +54,7 @@ export default function WhyGedsliey() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: '-60px' }}
                 transition={{ duration: reduce ? 0.2 : 0.4, delay: reduce ? 0 : i * 0.06 }}
-                className="grid gap-2 border-t border-brand-gray/15 py-6 sm:grid-cols-[3rem_1fr] sm:gap-6"
+                className="grid gap-2 border border-gray-200 bg-white px-6 py-6 sm:grid-cols-[3rem_1fr] sm:gap-6"
               >
                 <span className="font-display text-lg font-bold text-brand-brown">
                   {String(i + 1).padStart(2, '0')}
