@@ -33,19 +33,22 @@ export default function Hero() {
   })
 
   return (
-    <section className="relative overflow-hidden bg-near-black">
+    <section className="relative min-h-[600px] overflow-hidden bg-near-black">
       {/* Crossfading background images */}
       <AnimatePresence>
-        <motion.img
+        <motion.div
           key={current}
-          src={IMAGES[current]}
-          alt=""
           aria-hidden="true"
           initial={{ opacity: 0 }}
-          animate={{ opacity: 0.72 }}
+          animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 1.6, ease: 'easeInOut' }}
-          className="absolute inset-0 h-full w-full object-cover object-center"
+          className="absolute inset-0"
+          style={{
+            backgroundImage: `url(${IMAGES[current]})`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+          }}
         />
       </AnimatePresence>
 
