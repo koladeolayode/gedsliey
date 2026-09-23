@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import type { ReactNode } from 'react'
 
-type Variant = 'primary' | 'secondary' | 'ghost'
+type Variant = 'primary' | 'secondary' | 'ghost' | 'inverse'
 
 interface CommonProps {
   variant?: Variant
@@ -35,6 +35,7 @@ const variants: Record<Variant, string> = {
     'border border-brand-brown text-brand-brown hover:bg-brand-brown hover:text-off-white',
   ghost:
     'text-brand-brown underline-offset-4 hover:underline px-0 py-0 hover:text-brand-plum',
+  inverse: 'bg-white text-brand-brown hover:bg-off-white',
 }
 
 export default function Button(props: ButtonProps) {

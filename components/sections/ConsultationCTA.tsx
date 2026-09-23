@@ -14,11 +14,7 @@ export default function ConsultationCTA() {
           </h2>
           <p className="text-white/70 text-lg mb-12">Start with the question.</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button
-              href="/consultation"
-              variant="primary"
-              className="bg-white text-brand-brown hover:bg-off-white"
-            >
+            <Button href="/consultation" variant="inverse">
               Book a Consultation
             </Button>
             <Button
