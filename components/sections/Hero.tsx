@@ -1,5 +1,6 @@
 'use client'
 
+import Link from 'next/link'
 import { motion, useReducedMotion } from 'framer-motion'
 import Container from '@/components/ui/Container'
 import Button from '@/components/ui/Button'
@@ -60,7 +61,8 @@ export default function Hero() {
         <div className="max-w-3xl">
           <motion.p
             {...fadeUp(0)}
-            className="text-xs font-semibold uppercase tracking-[0.24em] text-brand-brown"
+            style={{ textShadow: '0 1px 6px rgba(0,0,0,0.5)' }}
+            className="text-xs font-semibold uppercase tracking-[0.24em] text-white/60"
           >
             Independent Technical Consulting
           </motion.p>
@@ -86,9 +88,13 @@ export default function Hero() {
             <Button href="/expertise" variant="primary">
               Explore Expertise
             </Button>
-            <Button href="/contact" variant="secondary" className="border-white/50 text-white hover:border-white hover:bg-white hover:text-near-black">
+            <Link
+              href="/contact"
+              style={{ borderColor: 'rgba(255,255,255,0.55)', color: '#ffffff' }}
+              className="inline-flex items-center justify-center border px-6 py-3 text-sm font-medium tracking-wide transition-colors duration-200 hover:bg-white hover:text-near-black"
+            >
               Start With a Question
-            </Button>
+            </Link>
           </motion.div>
         </div>
       </Container>
