@@ -109,6 +109,17 @@ export default function Footer() {
             Terms
           </Link>
         </div>
+        <p>
+          Designed by{' '}
+          <a
+            href="https://oakessolutions.io"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-brand-gray hover:text-white transition-colors underline underline-offset-2"
+          >
+            Oakes Solutions
+          </a>
+        </p>
       </Container>
     </footer>
   )
