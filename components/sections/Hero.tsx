@@ -19,7 +19,7 @@ export default function Hero() {
       {/* Bridge background image */}
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
-        src="https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?w=1600&q=80&auto=format&fit=crop"
+        src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1600&q=80&auto=format&fit=crop"
         alt=""
         aria-hidden="true"
         className="absolute inset-0 h-full w-full object-cover object-center opacity-75"
