@@ -14,11 +14,26 @@ export default function Hero() {
   })
 
   return (
-    <section className="relative overflow-hidden bg-gray-50 tech-grid">
-      {/* Inline technical line pattern */}
+    <section className="relative overflow-hidden bg-near-black">
+      {/* Bridge background image */}
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img
+        src="https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?w=1600&q=80&auto=format&fit=crop"
+        alt=""
+        aria-hidden="true"
+        className="absolute inset-0 h-full w-full object-cover object-center opacity-40"
+      />
+
+      {/* Gradient overlay — keeps text legible */}
+      <div
+        aria-hidden="true"
+        className="absolute inset-0 bg-gradient-to-r from-near-black/90 via-near-black/60 to-transparent"
+      />
+
+      {/* Technical line pattern */}
       <svg
         aria-hidden="true"
-        className="pointer-events-none absolute right-0 top-0 h-full w-1/2 text-brand-gray/35"
+        className="pointer-events-none absolute right-0 top-0 h-full w-1/2 text-white/10"
         preserveAspectRatio="xMaxYMid slice"
         viewBox="0 0 400 400"
         fill="none"
@@ -42,7 +57,7 @@ export default function Hero() {
           </motion.p>
           <motion.h1
             {...fadeUp(0.08)}
-            className="mt-6 font-display text-5xl font-bold leading-[0.95] text-near-black sm:text-6xl md:text-7xl"
+            className="mt-6 font-display text-5xl font-bold leading-[0.95] text-white sm:text-6xl md:text-7xl"
           >
             ASKING THE
             <br />
@@ -50,7 +65,7 @@ export default function Hero() {
           </motion.h1>
           <motion.p
             {...fadeUp(0.16)}
-            className="mt-8 max-w-xl text-lg leading-relaxed text-brand-gray"
+            className="mt-8 max-w-xl text-lg leading-relaxed text-white/70"
           >
             The obvious question rarely reveals the full picture. We interrogate
             evidence, challenge assumptions, and surface the questions others miss —
@@ -60,7 +75,7 @@ export default function Hero() {
             <Button href="/expertise" variant="primary">
               Explore Expertise
             </Button>
-            <Button href="/contact" variant="secondary">
+            <Button href="/contact" variant="secondary" className="border-white/50 text-white hover:border-white hover:bg-white hover:text-near-black">
               Start With a Question
             </Button>
           </motion.div>
