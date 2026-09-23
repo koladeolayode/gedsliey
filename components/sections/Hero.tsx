@@ -21,13 +21,22 @@ export default function Hero() {
         src="https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?w=1600&q=80&auto=format&fit=crop"
         alt=""
         aria-hidden="true"
-        className="absolute inset-0 h-full w-full object-cover object-center opacity-40"
+        className="absolute inset-0 h-full w-full object-cover object-center opacity-50"
       />
 
-      {/* Gradient overlay — keeps text legible */}
+      {/* Base dark fill so image never bleeds through fully */}
+      <div aria-hidden="true" className="absolute inset-0 bg-near-black/50" />
+
+      {/* Directional gradient — stronger on left where text sits */}
       <div
         aria-hidden="true"
-        className="absolute inset-0 bg-gradient-to-r from-near-black/90 via-near-black/60 to-transparent"
+        className="absolute inset-0 bg-gradient-to-r from-near-black/95 via-near-black/70 to-near-black/20"
+      />
+
+      {/* Bottom fade for smooth section transition */}
+      <div
+        aria-hidden="true"
+        className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-near-black/40 to-transparent"
       />
 
       {/* Technical line pattern */}
@@ -57,6 +66,7 @@ export default function Hero() {
           </motion.p>
           <motion.h1
             {...fadeUp(0.08)}
+            style={{ textShadow: '0 2px 24px rgba(0,0,0,0.6), 0 1px 4px rgba(0,0,0,0.4)' }}
             className="mt-6 font-display text-5xl font-bold leading-[0.95] text-white sm:text-6xl md:text-7xl"
           >
             ASKING THE
@@ -65,7 +75,8 @@ export default function Hero() {
           </motion.h1>
           <motion.p
             {...fadeUp(0.16)}
-            className="mt-8 max-w-xl text-lg leading-relaxed text-white/70"
+            style={{ textShadow: '0 1px 8px rgba(0,0,0,0.5)' }}
+            className="mt-8 max-w-xl text-lg leading-relaxed text-white/80"
           >
             The obvious question rarely reveals the full picture. We interrogate
             evidence, challenge assumptions, and surface the questions others miss —
