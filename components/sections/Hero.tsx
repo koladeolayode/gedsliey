@@ -7,10 +7,12 @@ import Container from '@/components/ui/Container'
 import Button from '@/components/ui/Button'
 
 const IMAGES = [
-  'https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?w=1600&q=80&auto=format&fit=crop', // city bridge
-  'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1600&q=80&auto=format&fit=crop', // suspension bridge cables
-  'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1600&q=80&auto=format&fit=crop', // dramatic mountain bridge
-  'https://images.unsplash.com/photo-1494412574643-ff11b0a5c1c3?w=1600&q=80&auto=format&fit=crop', // bridge architecture
+  'https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?w=1600&q=80&auto=format&fit=crop',  // city bridge
+  'https://images.unsplash.com/photo-1532094349884-543559c0c328?w=1600&q=80&auto=format&fit=crop',  // chemistry lab
+  'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1600&q=80&auto=format&fit=crop',  // suspension bridge cables
+  'https://images.unsplash.com/photo-1507413245164-6160d8298b31?w=1600&q=80&auto=format&fit=crop',  // materials science lab
+  'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1600&q=80&auto=format&fit=crop',  // mountain bridge span
+  'https://images.unsplash.com/photo-1563089145-599997674d42?w=1600&q=80&auto=format&fit=crop',  // industrial materials / corrosion
 ]
 
 export default function Hero() {
