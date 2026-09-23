@@ -22,22 +22,13 @@ export default function Hero() {
         src="https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?w=1600&q=80&auto=format&fit=crop"
         alt=""
         aria-hidden="true"
-        className="absolute inset-0 h-full w-full object-cover object-center opacity-50"
+        className="absolute inset-0 h-full w-full object-cover object-center opacity-75"
       />
 
-      {/* Base dark fill so image never bleeds through fully */}
-      <div aria-hidden="true" className="absolute inset-0 bg-near-black/50" />
-
-      {/* Directional gradient — stronger on left where text sits */}
+      {/* Directional gradient — enough contrast on left for text, open on right */}
       <div
         aria-hidden="true"
-        className="absolute inset-0 bg-gradient-to-r from-near-black/95 via-near-black/70 to-near-black/20"
-      />
-
-      {/* Bottom fade for smooth section transition */}
-      <div
-        aria-hidden="true"
-        className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-near-black/40 to-transparent"
+        className="absolute inset-0 bg-gradient-to-r from-near-black/80 via-near-black/40 to-transparent"
       />
 
       {/* Technical line pattern */}
