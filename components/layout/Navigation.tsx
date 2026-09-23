@@ -54,22 +54,27 @@ function Logo() {
 
 function ExpertiseDropdown() {
   const pathname = usePathname()
-  const reduce = useReducedMotion()
+  const [open, setOpen] = useState(false)
   const active = pathname.startsWith('/expertise')
 
   return (
-    <div className="group relative">
+    <div
+      className="relative"
+      onMouseEnter={() => setOpen(true)}
+      onMouseLeave={() => setOpen(false)}
+    >
       {/* Trigger */}
       <Link
         href="/expertise"
         aria-current={active ? 'page' : undefined}
+        aria-expanded={open}
         className={`flex items-center gap-1 text-sm transition-colors hover:text-brand-brown ${
           active ? 'text-brand-brown' : 'text-near-black'
         }`}
       >
         Expertise
         <svg
-          className="h-3 w-3 transition-transform duration-200 group-hover:rotate-180"
+          className={`h-3 w-3 transition-transform duration-200 ${open ? 'rotate-180' : ''}`}
           viewBox="0 0 12 12"
           fill="none"
           aria-hidden="true"
@@ -79,56 +84,60 @@ function ExpertiseDropdown() {
       </Link>
 
       {/* Dropdown panel */}
-      <div
-        className="invisible absolute left-1/2 top-full z-50 mt-3 w-72 -translate-x-1/2 opacity-0 transition-all duration-200 group-hover:visible group-hover:opacity-100"
-        role="menu"
-      >
-        {/* Arrow */}
-        <div className="mx-auto mb-0 h-2 w-4 overflow-hidden" aria-hidden="true">
-          <div className="mx-auto h-3 w-3 origin-bottom-left rotate-45 border border-gray-200 bg-white" />
-        </div>
-
-        <div className="border border-gray-200 bg-white shadow-lg">
-          {/* Header row */}
-          <div className="border-b border-gray-100 px-5 py-3">
-            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-brand-brown">
-              Our Expertise
-            </p>
+      {open && (
+        <div
+          className="absolute left-1/2 top-full z-50 mt-3 w-72 -translate-x-1/2"
+          role="menu"
+        >
+          {/* Arrow */}
+          <div className="mx-auto mb-0 h-2 w-4 overflow-hidden" aria-hidden="true">
+            <div className="mx-auto h-3 w-3 origin-bottom-left rotate-45 border border-gray-200 bg-white" />
           </div>
 
-          {/* Items */}
-          <ul>
-            {EXPERTISE_LINKS.map((item, i) => (
-              <li key={item.href}>
-                <Link
-                  href={item.href}
-                  role="menuitem"
-                  className={`group/item flex flex-col gap-0.5 px-5 py-4 transition-colors hover:bg-gray-50 ${
-                    i < EXPERTISE_LINKS.length - 1 ? 'border-b border-gray-100' : ''
-                  }`}
-                >
-                  <span className="font-display text-sm font-semibold text-near-black group-hover/item:text-brand-brown transition-colors">
-                    {item.label}
-                  </span>
-                  <span className="text-xs leading-relaxed text-brand-gray">
-                    {item.description}
-                  </span>
-                </Link>
-              </li>
-            ))}
-          </ul>
+          <div className="border border-gray-200 bg-white shadow-lg">
+            {/* Header row */}
+            <div className="border-b border-gray-100 px-5 py-3">
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-brand-brown">
+                Our Expertise
+              </p>
+            </div>
 
-          {/* Footer row */}
-          <div className="border-t border-gray-100 bg-gray-50 px-5 py-3">
-            <Link
-              href="/expertise"
-              className="text-xs font-medium text-brand-brown hover:underline"
-            >
-              View all expertise →
-            </Link>
+            {/* Items */}
+            <ul>
+              {EXPERTISE_LINKS.map((item, i) => (
+                <li key={item.href}>
+                  <Link
+                    href={item.href}
+                    role="menuitem"
+                    onClick={() => setOpen(false)}
+                    className={`flex flex-col gap-0.5 px-5 py-4 transition-colors hover:bg-gray-50 ${
+                      i < EXPERTISE_LINKS.length - 1 ? 'border-b border-gray-100' : ''
+                    }`}
+                  >
+                    <span className="font-display text-sm font-semibold text-near-black transition-colors hover:text-brand-brown">
+                      {item.label}
+                    </span>
+                    <span className="text-xs leading-relaxed text-brand-gray">
+                      {item.description}
+                    </span>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+
+            {/* Footer row */}
+            <div className="border-t border-gray-100 bg-gray-50 px-5 py-3">
+              <Link
+                href="/expertise"
+                onClick={() => setOpen(false)}
+                className="text-xs font-medium text-brand-brown hover:underline"
+              >
+                View all expertise →
+              </Link>
+            </div>
           </div>
         </div>
-      </div>
+      )}
     </div>
   )
 }

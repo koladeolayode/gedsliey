@@ -44,7 +44,7 @@ export default function Hero() {
           animate={{ opacity: IMAGES[current].imgOpacity }}
           exit={{ opacity: 0 }}
           transition={{ duration: 1.6, ease: 'easeInOut' }}
-          className="absolute inset-0"
+          className="pointer-events-none absolute inset-0"
           style={{
             backgroundImage: `url(${IMAGES[current].src})`,
             backgroundSize: 'cover',
@@ -56,7 +56,7 @@ export default function Hero() {
       {/* Directional gradient — per-image overlay strength */}
       <div
         aria-hidden="true"
-        className={`absolute inset-0 bg-gradient-to-r ${IMAGES[current].overlay}`}
+        className={`pointer-events-none absolute inset-0 bg-gradient-to-r ${IMAGES[current].overlay}`}
       />
 
       {/* Technical line pattern */}
