@@ -1,6 +1,6 @@
 import { type NextRequest, NextResponse } from 'next/server'
 import { contactSchema } from '@/lib/validation/contact'
-import { sendContactToN8n } from '@/lib/integrations/n8n'
+import { sendContactEmail } from '@/lib/integrations/email'
 
 // Simple in-memory rate limiter (resets on cold start)
 const rateLimitMap = new Map<string, { count: number; reset: number }>()
@@ -55,7 +55,7 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ success: true })
   }
 
-  const result = await sendContactToN8n(data)
+  const result = await sendContactEmail(data)
   if (!result.ok) {
     return NextResponse.json(
       { message: 'We could not submit your enquiry right now. Please try again.' },
