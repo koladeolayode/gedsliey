@@ -8,11 +8,10 @@ import Button from '@/components/ui/Button'
 
 const IMAGES = [
   'https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?w=1600&q=80&auto=format&fit=crop',  // city bridge
-  'https://images.unsplash.com/photo-1532094349884-543559c0c328?w=1600&q=80&auto=format&fit=crop',  // chemistry lab
   'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1600&q=80&auto=format&fit=crop',  // suspension bridge cables
-  'https://images.unsplash.com/photo-1507413245164-6160d8298b31?w=1600&q=80&auto=format&fit=crop',  // materials science lab
-  'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1600&q=80&auto=format&fit=crop',  // mountain bridge span
-  'https://images.unsplash.com/photo-1563089145-599997674d42?w=1600&q=80&auto=format&fit=crop',  // industrial materials / corrosion
+  'https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1600&q=80&auto=format&fit=crop',  // structural steel materials
+  'https://images.unsplash.com/photo-1565891741440-64078f9db925?w=1600&q=80&auto=format&fit=crop',  // chemical / industrial plant
+  'https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?w=1600&q=80&auto=format&fit=crop',  // corrosion / rust on metal
 ]
 
 export default function Hero() {
