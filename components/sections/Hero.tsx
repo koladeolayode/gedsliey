@@ -7,12 +7,12 @@ import Container from '@/components/ui/Container'
 import Button from '@/components/ui/Button'
 
 const IMAGES = [
-  { src: 'https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?w=1600&q=80&auto=format&fit=crop', overlay: 'from-near-black/90 via-near-black/60 to-near-black/30' },  // city bridge — darker original treatment
-  { src: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1600&q=80&auto=format&fit=crop', overlay: 'from-near-black/80 via-near-black/40 to-transparent' },  // suspension bridge cables
-  { src: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1600&q=80&auto=format&fit=crop', overlay: 'from-near-black/80 via-near-black/40 to-transparent' },  // structural steel materials
-  { src: 'https://images.unsplash.com/photo-1565891741440-64078f9db925?w=1600&q=80&auto=format&fit=crop', overlay: 'from-near-black/80 via-near-black/40 to-transparent' },  // chemical / industrial plant
-  { src: 'https://images.unsplash.com/photo-1563089145-599997674d42?w=1600&q=80&auto=format&fit=crop', overlay: 'from-near-black/80 via-near-black/40 to-transparent' },  // corrosion / rust on metal
-  { src: 'https://images.unsplash.com/photo-1603126857599-f6e157fa2fe6?w=1600&q=80&auto=format&fit=crop', overlay: 'from-near-black/80 via-near-black/40 to-transparent' },  // chemistry / research lab
+  { src: 'https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?w=1600&q=80&auto=format&fit=crop', imgOpacity: 0.4, overlay: 'from-near-black/90 via-near-black/60 to-transparent' },  // city bridge
+  { src: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1600&q=80&auto=format&fit=crop', imgOpacity: 0.75, overlay: 'from-near-black/80 via-near-black/40 to-transparent' },  // suspension bridge cables
+  { src: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1600&q=80&auto=format&fit=crop', imgOpacity: 0.75, overlay: 'from-near-black/80 via-near-black/40 to-transparent' },  // structural steel materials
+  { src: 'https://images.unsplash.com/photo-1565891741440-64078f9db925?w=1600&q=80&auto=format&fit=crop', imgOpacity: 0.75, overlay: 'from-near-black/80 via-near-black/40 to-transparent' },  // chemical / industrial plant
+  { src: 'https://images.unsplash.com/photo-1563089145-599997674d42?w=1600&q=80&auto=format&fit=crop', imgOpacity: 0.75, overlay: 'from-near-black/80 via-near-black/40 to-transparent' },  // corrosion / rust on metal
+  { src: 'https://images.unsplash.com/photo-1603126857599-f6e157fa2fe6?w=1600&q=80&auto=format&fit=crop', imgOpacity: 0.75, overlay: 'from-near-black/80 via-near-black/40 to-transparent' },  // chemistry / research lab
 ]
 
 export default function Hero() {
@@ -41,7 +41,7 @@ export default function Hero() {
           key={current}
           aria-hidden="true"
           initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
+          animate={{ opacity: IMAGES[current].imgOpacity }}
           exit={{ opacity: 0 }}
           transition={{ duration: 1.6, ease: 'easeInOut' }}
           className="absolute inset-0"
