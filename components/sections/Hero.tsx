@@ -91,7 +91,7 @@ export default function Hero() {
             <Link
               href="/contact"
               style={{ borderColor: 'rgba(255,255,255,0.55)', color: '#ffffff' }}
-              className="inline-flex items-center justify-center border px-6 py-3 text-sm font-medium tracking-wide transition-colors duration-200 hover:bg-white hover:text-near-black"
+              className="inline-flex items-center justify-center border px-6 py-3 text-sm font-medium tracking-wide transition-colors duration-200 hover:bg-white/20 hover:border-white"
             >
               Start With a Question
             </Link>
