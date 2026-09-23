@@ -39,20 +39,25 @@ export default function ContactPage() {
               <div className="space-y-6">
                 <div>
                   <p className="font-display font-semibold text-sm text-near-black mb-1">
-                    Email
+                    General Enquiries
                   </p>
-                  {process.env.NEXT_PUBLIC_CONTACT_EMAIL ? (
-                    <a
-                      href={`mailto:${process.env.NEXT_PUBLIC_CONTACT_EMAIL}`}
-                      className="text-brand-gray text-sm hover:text-brand-brown transition-colors"
-                    >
-                      {process.env.NEXT_PUBLIC_CONTACT_EMAIL}
-                    </a>
-                  ) : (
-                    <p className="text-brand-gray text-sm">
-                      Use the form to get in touch.
-                    </p>
-                  )}
+                  <a
+                    href="mailto:info@gedsliey.com"
+                    className="text-brand-gray text-sm hover:text-brand-brown transition-colors"
+                  >
+                    info@gedsliey.com
+                  </a>
+                </div>
+                <div>
+                  <p className="font-display font-semibold text-sm text-near-black mb-1">
+                    Support
+                  </p>
+                  <a
+                    href="mailto:support@gedsliey.com"
+                    className="text-brand-gray text-sm hover:text-brand-brown transition-colors"
+                  >
+                    support@gedsliey.com
+                  </a>
                 </div>
                 <div>
                   <p className="font-display font-semibold text-sm text-near-black mb-2">
