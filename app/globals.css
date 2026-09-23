@@ -67,48 +67,57 @@ a {
   background-size: 48px 48px;
 }
 
-/* Liquid glass effect — logo hover */
+/* Liquid glass effect — logo hover
+   Uses layered gradients + shadows instead of backdrop-filter
+   so it works even when nested inside a backdrop-filter container. */
 .liquid-glass {
   position: relative;
-  background: rgba(255, 255, 255, 0.18);
-  backdrop-filter: blur(14px) saturate(200%) brightness(1.06);
-  -webkit-backdrop-filter: blur(14px) saturate(200%) brightness(1.06);
-  border: 1px solid rgba(255, 255, 255, 0.55);
+  background:
+    linear-gradient(
+      160deg,
+      rgba(255, 255, 255, 0.92) 0%,
+      rgba(247, 244, 241, 0.80) 55%,
+      rgba(232, 229, 226, 0.70) 100%
+    );
+  border: 1px solid rgba(255, 255, 255, 0.90);
+  border-bottom-color: rgba(208, 203, 199, 0.60);
+  border-right-color: rgba(208, 203, 199, 0.50);
   box-shadow:
-    0 2px 20px rgba(74, 56, 46, 0.10),
-    0 1px 4px rgba(74, 56, 46, 0.06),
-    inset 0 1.5px 0 rgba(255, 255, 255, 0.75),
-    inset 0 -1px 0 rgba(74, 56, 46, 0.06);
+    0 4px 24px rgba(74, 56, 46, 0.12),
+    0 1px 6px rgba(74, 56, 46, 0.08),
+    inset 0 2px 0 rgba(255, 255, 255, 1),
+    inset 0 -1px 0 rgba(74, 56, 46, 0.08),
+    inset 1px 0 0 rgba(255, 255, 255, 0.80);
   overflow: hidden;
 }
 
-/* Specular highlight — top-left light streak */
+/* Specular diagonal highlight */
 .liquid-glass::before {
   content: '';
   position: absolute;
   inset: 0;
   background: linear-gradient(
-    135deg,
-    rgba(255, 255, 255, 0.55) 0%,
-    rgba(255, 255, 255, 0.12) 40%,
-    rgba(255, 255, 255, 0) 65%
+    125deg,
+    rgba(255, 255, 255, 0.90) 0%,
+    rgba(255, 255, 255, 0.30) 35%,
+    rgba(255, 255, 255, 0) 60%
   );
   pointer-events: none;
   border-radius: inherit;
 }
 
-/* Subtle bottom-edge refraction */
+/* Bottom-edge refraction line */
 .liquid-glass::after {
   content: '';
   position: absolute;
   bottom: 0;
-  left: 10%;
-  right: 10%;
+  left: 8%;
+  right: 8%;
   height: 1px;
   background: linear-gradient(
     90deg,
     transparent,
-    rgba(255, 255, 255, 0.6) 50%,
+    rgba(255, 255, 255, 0.85) 50%,
     transparent
   );
   pointer-events: none;

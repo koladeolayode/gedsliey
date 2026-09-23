@@ -36,12 +36,11 @@ function Logo() {
     <Link
       href="/"
       aria-label="Gedsliey Inc. home"
-      className="logo-link group relative flex items-baseline gap-1 rounded-sm px-3 py-1.5 transition-all duration-300 hover:scale-[1.12]"
+      className="logo-link group relative flex items-baseline gap-1 rounded-md px-3 py-1.5 transition-all duration-300 hover:scale-[1.10]"
     >
-      {/* Liquid glass layer — visible only on hover via JS class toggle or CSS group */}
       <span
         aria-hidden="true"
-        className="liquid-glass pointer-events-none absolute inset-0 rounded-sm opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+        className="liquid-glass pointer-events-none absolute inset-0 rounded-md opacity-0 transition-all duration-300 group-hover:opacity-100"
       />
       <span className="relative font-display text-xl font-bold tracking-tight text-near-black transition-colors duration-300 group-hover:text-brand-brown">
         GEDSLIEY
