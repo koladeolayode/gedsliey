@@ -1,5 +1,5 @@
+import Link from 'next/link'
 import Container from '@/components/ui/Container'
-import Button from '@/components/ui/Button'
 
 export default function ConsultationCTA() {
   return (
@@ -14,16 +14,19 @@ export default function ConsultationCTA() {
           </h2>
           <p className="text-white/70 text-lg mb-12">Start with the question.</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button href="/consultation" variant="inverse">
+            <Link
+              href="/consultation"
+              style={{ backgroundColor: '#ffffff', color: '#4A382E' }}
+              className="inline-flex items-center justify-center px-6 py-3 text-sm font-medium tracking-wide transition-colors duration-200 hover:bg-off-white"
+            >
               Book a Consultation
-            </Button>
-            <Button
+            </Link>
+            <Link
               href="/contact"
-              variant="secondary"
-              className="border-white text-white hover:bg-white hover:text-brand-brown"
+              className="inline-flex items-center justify-center border border-white px-6 py-3 text-sm font-medium tracking-wide text-white transition-colors duration-200 hover:bg-white hover:text-brand-brown"
             >
               Contact Gedsliey
-            </Button>
+            </Link>
           </div>
         </div>
       </Container>
