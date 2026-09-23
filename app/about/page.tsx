@@ -148,16 +148,44 @@ export default function AboutPage() {
         </Container>
       </section>
 
-      {/* Team placeholder */}
-      <section className="bg-off-white py-24">
+      {/* Team — coming soon */}
+      <section className="bg-gray-50 py-24">
         <Container as="div">
-          <p className="text-xs font-semibold uppercase tracking-[0.24em] text-brand-brown mb-6">
-            Our Team
-          </p>
-          <h2 className="font-display text-3xl font-bold text-near-black mb-4">
-            The people behind the questions.
-          </h2>
-          <p className="text-brand-gray text-sm">[CLIENT TO PROVIDE TEAM PROFILES]</p>
+          <div className="grid gap-16 lg:grid-cols-2 items-center">
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-[0.24em] text-brand-brown mb-6">
+                Our Team
+              </p>
+              <h2 className="font-display text-3xl font-bold text-near-black mb-6 leading-tight sm:text-4xl">
+                The people behind the questions.
+              </h2>
+              <p className="text-brand-gray leading-relaxed mb-4">
+                Gedsliey is built on deep, specialised expertise — PhD-qualified engineering
+                knowledge combined with more than 20 years of applied research and investigation
+                across materials, structures and complex engineering systems.
+              </p>
+              <p className="text-brand-gray leading-relaxed">
+                Our team brings independent thinking to every engagement. No predetermined
+                conclusions. No conflicts of interest. Just rigorous technical analysis and
+                evidence-based findings.
+              </p>
+            </div>
+            <div className="grid grid-cols-2 gap-px bg-gray-200">
+              {[
+                { label: 'PhD-qualified', detail: 'Engineering expertise' },
+                { label: '20+ years', detail: 'Research experience' },
+                { label: 'Independent', detail: 'No conflicts of interest' },
+                { label: 'Evidence-based', detail: 'Every finding, every time' },
+              ].map((item) => (
+                <div key={item.label} className="bg-white p-8">
+                  <p className="font-display text-2xl font-bold text-brand-brown mb-1">
+                    {item.label}
+                  </p>
+                  <p className="text-sm text-brand-gray">{item.detail}</p>
+                </div>
+              ))}
+            </div>
+          </div>
         </Container>
       </section>
 
