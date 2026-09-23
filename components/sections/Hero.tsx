@@ -1,12 +1,29 @@
 'use client'
 
 import Link from 'next/link'
-import { motion, useReducedMotion } from 'framer-motion'
+import { useState, useEffect } from 'react'
+import { motion, AnimatePresence, useReducedMotion } from 'framer-motion'
 import Container from '@/components/ui/Container'
 import Button from '@/components/ui/Button'
 
+const IMAGES = [
+  'https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?w=1600&q=80&auto=format&fit=crop', // city bridge
+  'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1600&q=80&auto=format&fit=crop', // suspension bridge cables
+  'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1600&q=80&auto=format&fit=crop', // dramatic mountain bridge
+  'https://images.unsplash.com/photo-1494412574643-ff11b0a5c1c3?w=1600&q=80&auto=format&fit=crop', // bridge architecture
+]
+
 export default function Hero() {
   const reduce = useReducedMotion()
+  const [current, setCurrent] = useState(0)
+
+  useEffect(() => {
+    if (reduce) return
+    const interval = setInterval(() => {
+      setCurrent((prev) => (prev + 1) % IMAGES.length)
+    }, 6000)
+    return () => clearInterval(interval)
+  }, [reduce])
 
   const fadeUp = (delay: number) => ({
     initial: reduce ? { opacity: 0 } : { opacity: 0, y: 24 },
@@ -16,16 +33,22 @@ export default function Hero() {
 
   return (
     <section className="relative overflow-hidden bg-near-black">
-      {/* Bridge background image */}
-      {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img
-        src="https://images.unsplash.com/photo-1545558014-8692077e9b5c?w=1600&q=80&auto=format&fit=crop"
-        alt=""
-        aria-hidden="true"
-        className="absolute inset-0 h-full w-full object-cover object-center opacity-75"
-      />
+      {/* Crossfading background images */}
+      <AnimatePresence>
+        <motion.img
+          key={current}
+          src={IMAGES[current]}
+          alt=""
+          aria-hidden="true"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 0.72 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 1.6, ease: 'easeInOut' }}
+          className="absolute inset-0 h-full w-full object-cover object-center"
+        />
+      </AnimatePresence>
 
-      {/* Directional gradient — enough contrast on left for text, open on right */}
+      {/* Directional gradient — stronger on left where text sits */}
       <div
         aria-hidden="true"
         className="absolute inset-0 bg-gradient-to-r from-near-black/80 via-near-black/40 to-transparent"
@@ -87,6 +110,19 @@ export default function Hero() {
               Start With a Question
             </Link>
           </motion.div>
+
+          {/* Slide indicators */}
+          <div className="mt-10 flex gap-2" aria-hidden="true">
+            {IMAGES.map((_, i) => (
+              <button
+                key={i}
+                onClick={() => setCurrent(i)}
+                className={`h-0.5 transition-all duration-300 ${
+                  i === current ? 'w-8 bg-white' : 'w-4 bg-white/30'
+                }`}
+              />
+            ))}
+          </div>
         </div>
       </Container>
     </section>
