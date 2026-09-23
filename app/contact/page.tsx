@@ -37,20 +37,27 @@ export default function ContactPage() {
                 can help — start here.
               </p>
               <div className="space-y-6">
-                {process.env.NEXT_PUBLIC_CONTACT_EMAIL && (
-                  <div>
-                    <p className="font-display font-semibold text-sm text-near-black mb-1">
-                      Email
-                    </p>
+                <div>
+                  <p className="font-display font-semibold text-sm text-near-black mb-1">
+                    Email
+                  </p>
+                  {process.env.NEXT_PUBLIC_CONTACT_EMAIL ? (
                     <a
                       href={`mailto:${process.env.NEXT_PUBLIC_CONTACT_EMAIL}`}
                       className="text-brand-gray text-sm hover:text-brand-brown transition-colors"
                     >
                       {process.env.NEXT_PUBLIC_CONTACT_EMAIL}
                     </a>
-                  </div>
-                )}
+                  ) : (
+                    <p className="text-brand-gray text-sm">
+                      Use the form to get in touch.
+                    </p>
+                  )}
+                </div>
                 <div>
+                  <p className="font-display font-semibold text-sm text-near-black mb-2">
+                    LinkedIn
+                  </p>
                   {process.env.NEXT_PUBLIC_LINKEDIN_URL ? (
                     <a
                       href={process.env.NEXT_PUBLIC_LINKEDIN_URL}
