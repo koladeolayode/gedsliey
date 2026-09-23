@@ -11,7 +11,7 @@ const IMAGES = [
   'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1600&q=80&auto=format&fit=crop',  // suspension bridge cables
   'https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1600&q=80&auto=format&fit=crop',  // structural steel materials
   'https://images.unsplash.com/photo-1565891741440-64078f9db925?w=1600&q=80&auto=format&fit=crop',  // chemical / industrial plant
-  'https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?w=1600&q=80&auto=format&fit=crop',  // corrosion / rust on metal
+  'https://images.unsplash.com/photo-1563089145-599997674d42?w=1600&q=80&auto=format&fit=crop',  // corrosion / rust on metal
   'https://images.unsplash.com/photo-1603126857599-f6e157fa2fe6?w=1600&q=80&auto=format&fit=crop',  // chemistry / research lab
 ]
 
