@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useRef } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { AnimatePresence, motion, useReducedMotion } from 'framer-motion'
@@ -55,13 +55,22 @@ function Logo() {
 function ExpertiseDropdown() {
   const pathname = usePathname()
   const [open, setOpen] = useState(false)
+  const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null)
   const active = pathname.startsWith('/expertise')
+
+  const openMenu = () => {
+    if (closeTimer.current) clearTimeout(closeTimer.current)
+    setOpen(true)
+  }
+  const closeMenu = () => {
+    closeTimer.current = setTimeout(() => setOpen(false), 120)
+  }
 
   return (
     <div
       className="relative"
-      onMouseEnter={() => setOpen(true)}
-      onMouseLeave={() => setOpen(false)}
+      onMouseEnter={openMenu}
+      onMouseLeave={closeMenu}
     >
       {/* Trigger */}
       <Link
@@ -88,6 +97,8 @@ function ExpertiseDropdown() {
         <div
           className="absolute left-1/2 top-full z-50 mt-3 w-72 -translate-x-1/2"
           role="menu"
+          onMouseEnter={openMenu}
+          onMouseLeave={closeMenu}
         >
           {/* Arrow */}
           <div className="mx-auto mb-0 h-2 w-4 overflow-hidden" aria-hidden="true">

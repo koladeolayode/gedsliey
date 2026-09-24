@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import Container from '@/components/ui/Container'
 import Button from '@/components/ui/Button'
 import Badge from '@/components/ui/Badge'
@@ -131,20 +132,19 @@ export default function ServiceDetail({ service }: ServiceDetailProps) {
             </h2>
             <p className="mt-4 text-lg text-off-white/70">Start with the question.</p>
             <div className="mt-8 flex flex-col justify-center gap-4 sm:flex-row">
-              <Button
+              <Link
                 href="/contact"
-                variant="primary"
-                className="bg-off-white text-brand-brown hover:bg-white"
+                style={{ backgroundColor: '#F7F7F5', color: '#4A382E' }}
+                className="inline-flex items-center justify-center px-6 py-3 text-sm font-medium tracking-wide transition-colors duration-200 hover:bg-white"
               >
                 Contact Gedsliey
-              </Button>
-              <Button
+              </Link>
+              <Link
                 href="/consultation"
-                variant="secondary"
-                className="border-off-white text-off-white hover:bg-off-white hover:text-brand-brown"
+                className="inline-flex items-center justify-center border border-off-white px-6 py-3 text-sm font-medium tracking-wide text-off-white transition-colors duration-200 hover:bg-off-white hover:text-brand-brown"
               >
                 Book a Consultation
-              </Button>
+              </Link>
             </div>
           </div>
         </Container>
